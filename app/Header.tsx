@@ -1,5 +1,6 @@
 import Link from "@/node_modules/next/link";
 import { Bars3Icon } from "@heroicons/react/24/solid";
+import NavLinks from "./NavLinks";
 
 function Header() {
   return (
@@ -20,6 +21,7 @@ function Header() {
           </button>
         </div>
       </div>
+      <NavLinks />
     </header>
   );
 }
