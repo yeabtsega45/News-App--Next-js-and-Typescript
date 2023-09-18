@@ -1,11 +1,11 @@
-import React from "react";
+import { categories } from "@/constants";
 
 function NavLinks() {
   return (
     <nav>
-      <div>
-        <div>NavLinks</div>
-      </div>
+      {categories.map((category) => (
+        <NavLink key={category} category={category} />
+      ))}
     </nav>
   );
 }
