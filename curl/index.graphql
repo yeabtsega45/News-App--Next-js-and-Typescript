@@ -27,7 +27,7 @@ type Query {
   myQuery(
     access_key: String
     countries: String
-    countries: String
+    categories: String
     limit: String
     offset: String
     sort: String
