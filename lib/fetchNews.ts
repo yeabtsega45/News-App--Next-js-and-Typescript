@@ -1,4 +1,4 @@
-import { gql } from "@/node_modules/graphql-request/build/esm/index"
+import { gql } from "@/node_modules/graphql-request/build/esm/index";
 import sortNewsByImage from "./sortNewsByImage";
 
 const fetchNews = async (
