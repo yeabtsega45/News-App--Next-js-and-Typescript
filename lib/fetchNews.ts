@@ -1,4 +1,5 @@
 import { gql } from "@/node_modules/graphql-request/build/esm/index"
+import sortNewsByImage from "./sortNewsByImage";
 
 const fetchNews = async (
     category?: Category | string,
@@ -47,10 +48,26 @@ const fetchNews = async (
         headers: {
             "Content-Type": "application/json",
             Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
-        }
-    })    
-}
+        },
+        body: JSON.stringify({
+            query,
+            variables: {
+                access_key: process.env.STEPZEN_API_KEY,
+                categories: category,
+                keywords: keywords, 
+            },
+        }),
+    })  
+    
+    const newsResponse = await res.json();
 
-export default fetchNews
+    //Sort function by images vs not images present
+    const news = sortNewsByImage(newsResponse.data.myQuery);
+
+    //return news
+    return news;
+};
+
+export default fetchNews;
 
 //stepzen import curl "http://api.mediastack.com/v1/news?access_key=fd89d5ff0fc137f32fc10a434d641c44"
