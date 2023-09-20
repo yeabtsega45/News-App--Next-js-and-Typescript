@@ -24,7 +24,7 @@ function Header() {
         </div>
       </div>
       {/* <NavLinks /> */}
-      <Menu />
+      {/* <Menu /> */}
       <SearchBox />
     </header>
   );

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import NewsGrid from "./NewsGrid";
 import { NewsArticle } from "./NewsItem";
 import NewsItem from "./NewsItem";
+import Menu from "./Menu";
 
 function Homepage() {
   const [items, setItems] = useState<NewsArticle[]>([]);
@@ -21,6 +22,7 @@ function Homepage() {
 
   return (
     <div>
+      <Menu active={active} setActive={setActive} setCategory={setCategory} />
       <h1 className="font-serif text-2xl text-center underline decoration-6 decoration-orange-400">
         See The Latest News
       </h1>
