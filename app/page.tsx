@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import NewsGrid from "./NewsGrid";
+import NewsItem from "./NewsItem";
 
 function Homepage() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<NewsItem[]>([]);
   const [active, setActive] = useState(1);
   const [category, setCategory] = useState("general");
 
