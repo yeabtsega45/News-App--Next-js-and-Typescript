@@ -1,5 +1,6 @@
 import Link from "@/node_modules/next/link";
 import { Bars3Icon } from "@heroicons/react/24/solid";
+import Menu from "./Menu";
 import NavLinks from "./NavLinks";
 import SearchBox from "./SearchBox";
 
@@ -22,7 +23,8 @@ function Header() {
           </button>
         </div>
       </div>
-      <NavLinks />
+      {/* <NavLinks /> */}
+      <Menu />
       <SearchBox />
     </header>
   );
