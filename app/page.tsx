@@ -14,7 +14,7 @@ function Homepage() {
   //fetch news data
   useEffect(() => {
     fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apikey=ebc6fe1bc46e4acd9105b617c65dfb26`
+      `http://newsapi.org/v2/top-headlines?country=us&category=${category}&apikey=ebc6fe1bc46e4acd9105b617c65dfb26`
     )
       .then((res) => res.json())
       .then((data) => setItems(data.articles));
