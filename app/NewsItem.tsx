@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "@/node_modules/next/image";
 import React from "react";
 
