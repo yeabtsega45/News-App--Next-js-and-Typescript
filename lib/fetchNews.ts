@@ -41,31 +41,31 @@ const fetchNews = async (
               }
         }`;
     //Fetch function with Next.js 13 caching
-    const res = await fetch("https://oliveiradeazemeis.stepzen.net/api/endpoint/__graphql",{
-        method:"POST",
-        cache: isDynamic ? "no-cache" : "default",
-        next: isDynamic ? {revalidate:0} : {revalidate:20},
-        headers: {
-            "Content-Type": "application/json",
-            // Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
-        },
-        body: JSON.stringify({
-            query,
-            variables: {
-                // access_key: process.env.STEPZEN_API_KEY,
-                categories: category,
-                keywords: keywords, 
-            },
-        }),
-    })  
+    // const res = await fetch("https://oliveiradeazemeis.stepzen.net/api/endpoint/__graphql",{
+    //     method:"POST",
+    //     cache: isDynamic ? "no-cache" : "default",
+    //     next: isDynamic ? {revalidate:0} : {revalidate:20},
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //         Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+    //     },
+    //     body: JSON.stringify({
+    //         query,
+    //         variables: {
+    //             access_key: process.env.STEPZEN_API_KEY,
+    //             categories: category,
+    //             keywords: keywords, 
+    //         },
+    //     }),
+    // })  
     
-    const newsResponse = await res.json();
+    // const newsResponse = await res.json();
 
     //Sort function by images vs not images present
-    const news = sortNewsByImage(newsResponse.data.myQuery);
+    // const news = sortNewsByImage(newsResponse.data.myQuery);
 
     //return news
-    return news;
+    // return news;
 };
 
 export default fetchNews;
