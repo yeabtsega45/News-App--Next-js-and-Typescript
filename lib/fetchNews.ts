@@ -47,12 +47,12 @@ const fetchNews = async (
         next: isDynamic ? {revalidate:0} : {revalidate:20},
         headers: {
             "Content-Type": "application/json",
-            Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+            // Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
         },
         body: JSON.stringify({
             query,
             variables: {
-                access_key: process.env.STEPZEN_API_KEY,
+                // access_key: process.env.STEPZEN_API_KEY,
                 categories: category,
                 keywords: keywords, 
             },
