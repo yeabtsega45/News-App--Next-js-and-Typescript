@@ -17,7 +17,15 @@ function Homepage() {
       `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apikey=ebc6fe1bc46e4acd9105b617c65dfb26`
     )
       .then((res) => res.json())
-      .then((data) => setItems(data.articles));
+      .then((data) => {
+        if (!data.articles) {
+          throw new Error("No articles found");
+        }
+        setItems(data.articles);
+      })
+      .catch((error) => {
+        console.error("Fetch error:", error);
+      });
   }, [category]);
 
   return (

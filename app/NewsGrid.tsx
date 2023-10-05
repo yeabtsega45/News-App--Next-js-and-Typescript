@@ -9,9 +9,8 @@ interface Props {
 function NewsGrid({ items }: Props) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-10 gap-10">
-      {items.map((item, i) => (
-        <NewsItem key={i} item={item} />
-      ))}
+      {Array.isArray(items) &&
+        items.map((item, i) => <NewsItem key={i} item={item} />)}
     </div>
   );
 }
